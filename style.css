@@ -336,7 +336,7 @@ body{
    }
    .playalign{
       display: flex;
-      gap:8px;
+      gap:7px;
       flex-direction: column;
       align-items: center;
    }
@@ -385,7 +385,10 @@ body{
    height:70px;
   }
   .songtime{
-   font-size: 18px;
+   font-size: 16px;
+  }
+  .voltime{
+   display: hidden;
   }
 
 }
