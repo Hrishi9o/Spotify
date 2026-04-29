@@ -74,7 +74,7 @@ const playmusic = (track, pause = false) => {
 }
 //dynamic album
 async function displayalbum() {
-    let a = await fetch(`/bollywood`);
+    let a = await fetch(`/hrishisongs`);
     let response = await a.text();
     let div = document.createElement("div");
     div.innerHTML = response;
@@ -85,12 +85,12 @@ async function displayalbum() {
     for (let index = 0; index < array.length; index++) {
         const e = array[index];
         // console.log(e.href)
-        if (e.href.includes("%5Cbollywood")) {
+        if (e.href.includes("%5Chrishisongs")) {
             let element = e.href.split(`%5C`)[2]
             let folder = element.split("/")[0];
             //gte the meta data of the folder
             console.log(folder)
-            let a = await fetch(`/bollywood/${folder}/info.json`);
+            let a = await fetch(`/hrishisongs/${folder}/info.json`);
             let response = await a.json();
             console.log(response);
             let cardcontainer = document.querySelector(".cardcontainer")
@@ -105,7 +105,7 @@ async function displayalbum() {
                             fill="#000000"/>
                             </svg>
                         </div>
-                        <img src="/bollywood/${folder}/cover.jpg" alt="">
+                        <img src="/hrishisongs/${folder}/cover.jpg" alt="">
                         <h3>${response.title}</h3>
                         <h4>${response.description}</h4>
                         </div>`
@@ -116,14 +116,14 @@ async function displayalbum() {
         e.addEventListener("click", async (item) => {//item is the click object
             // console.log(item.currentTarget.dataset.folder)//currenttarget gives the card
             cf = item.currentTarget.dataset.folder;
-            songs = await getsongs(`bollywood/${item.currentTarget.dataset.folder}`);
+            songs = await getsongs(`hrishisongs/${item.currentTarget.dataset.folder}`);
             playmusic(songs[0]);
 
             //adding event listner li of songul library on the left
             Array.from(document.querySelector(".songlist").getElementsByTagName("li")).forEach(e => {
                 e.addEventListener("click", element => {
                     let ele = e.querySelector(".info").firstElementChild.innerHTML;
-                    playmusic(`%5Cbollywood%5C${cf}%5C${ele}`)
+                    playmusic(`%5Chrishisongs%5C${cf}%5C${ele}`)
                 })
             })
         })
@@ -131,12 +131,12 @@ async function displayalbum() {
 }
 async function main() {
     //get list of all songs
-    songs = await getsongs("bollywood/h2")
+    songs = await getsongs("hrishisongs/h2")
     playmusic(songs[0], true);
     Array.from(document.querySelector(".songlist").getElementsByTagName("li")).forEach(e => {
         e.addEventListener("click", element => {
             let ele = e.querySelector(".info").firstElementChild.innerHTML;
-            playmusic(`%5Cbollywood%5Ch2%5C${ele}`)
+            playmusic(`%5Chrishisongs%5Ch2%5C${ele}`)
         })
     })
 
