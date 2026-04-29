@@ -1,10 +1,6 @@
-**Developed with ❤️ by [Hrishi9o](https://github.com/Hrishi9o) during the Sigma
-```markdown
-# 🎵 Spotify Clone | Sigma Web Development 🚀
+# 🎵 Spotify Clone - Sigma Web Development 🚀
 
-A high-performance, fully responsive music streaming web application built from scratch using a pure **Vanilla Web Stack**. This project was developed as a major milestone in the **Sigma Web Development Course**, focusing on DOM manipulation, asynchronous JavaScript, and advanced CSS layouts.
-
-🔗 **Live Demo:** [https://hrishi9o.github.io/Spotify/](https://hrishi9o.github.io/Spotify/)
+Welcome to the **Spotify Clone** project! This is a high-fidelity, responsive web application that replicates the core user experience of Spotify using a pure **Vanilla Web Stack**. Designed with performance and clean code in mind, this project demonstrates advanced DOM manipulation and audio API integration.
 
 ---
 
@@ -31,7 +27,6 @@ A high-performance, fully responsive music streaming web application built from 
 ## 🏗️ Technical Architecture
 
 This project follows a clean directory structure to ensure maintainability:
-
 ```text
 .
 ├── 📄 index.html      # The skeleton of the player
