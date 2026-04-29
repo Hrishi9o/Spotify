@@ -3,10 +3,7 @@ const currentAudio = new Audio();
 const songul1 = document.querySelector(".songul");
 const cardcontainer = document.querySelector(".cardcontainer");
 
-// ==========================================
 // UTILITY FUNCTIONS
-// ==========================================
-// Formats the time correctly (e.g. 03:12)
 function formatTime(currentTime, duration) {
     if (isNaN(duration)) return "00:00 / 00:00";
     let currentMinutes = Math.floor(currentTime / 60);
@@ -28,10 +25,7 @@ function getFileName(path) {
 }
 
 
-// ==========================================
 // API & DATA FETCHING
-// ==========================================
-// Fetches the list of albums from your main albums.json
 async function fetchAlbumsList() {
     let a = await fetch(`./hrishisongs/albums.json`);
     return await a.json();
@@ -51,11 +45,7 @@ async function fetchSongsList(folder) {
     return songFiles.map(song => `./hrishisongs/${folder}/${song}`);
 }
 
-
-// ==========================================
 // AUDIO PLAYER CONTROLS
-// ==========================================
-// Plays a specific track
 function playMusic(track, pause = false) {
     currentAudio.src = track;
     if (!pause) {
@@ -92,11 +82,7 @@ function playPrev() {
     }
 }
 
-
-// ==========================================
 // UI UPDATES
-// ==========================================
-// Updates the left sidebar with the current album's songs
 function renderSongList(songs) {
     songul1.innerHTML = "";
     for (const song of songs) {
@@ -154,10 +140,7 @@ async function displayAlbums() {
     });
 }
 
-
-// ==========================================
 // MAIN INITIALIZATION & EVENT LISTENERS
-// ==========================================
 async function main() {
     // 1. Load the 'h1' folder by default when the page first opens
     let initialSongs = await fetchSongsList("h1");
