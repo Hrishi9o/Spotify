@@ -317,7 +317,7 @@ function playMusic(track, pause = false) {
     currentAudio.src = track;
     if (!pause) {
         currentAudio.play();
-        document.getElementById("play").src = "pause.svg";
+        document.getElementById("play").src = "play.svg";
     }
     // Update the UI text
     document.querySelector(".songinfo").innerHTML = getFileName(track);
@@ -364,7 +364,7 @@ function renderSongList(songs) {
             </div>
             <div class="playnow">
                 <span>Play Now</span>
-                <img src="play.svg" alt="">
+                <img src="pause.svg" alt="">
             </div>
         </li>`;
     }
