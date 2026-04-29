@@ -364,7 +364,7 @@ function renderSongList(songs) {
             </div>
             <div class="playnow">
                 <span>Play Now</span>
-                <img src="pause.svg" alt="">
+                <img src="play.svg" alt="">
             </div>
         </li>`;
     }
